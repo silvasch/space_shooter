@@ -1,5 +1,9 @@
 use anyhow::Result;
+use graphics_engine::GraphicsEngine;
 
-pub fn run() -> Result<()> {
+pub async fn run() -> Result<()> {
+    let engine = GraphicsEngine::new().await?;
+    engine.run();
+
     Ok(())
 }
